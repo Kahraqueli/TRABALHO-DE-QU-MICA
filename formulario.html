@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulário Anônimo — Rota do Bem</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo"><div class="mark">RB</div><div><h1>Pedir Ajuda</h1><div class="muted">Formulário anônimo</div></div></div>
+      <nav aria-label="menu"><ul><li><a href="index.html">Menu</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+    </header>
+
+    <main class="card">
+      <h2 id="pedido">Pedir ajuda — formulário anônimo</h2>
+      <p class="muted">Preencha com o que se sentir confortável. Não pedimos nome nem contato por padrão.</p>
+
+      <form id="anonForm" aria-label="Formulário de pedido de ajuda anônimo">
+        <div class="form-control"><label for="age">Idade (opcional)</label><input id="age" type="number" min="8" max="120" placeholder="Ex: 16" /></div>
+        <div class="form-control"><label for="role">Você é:</label><select id="role"><option value="estudante">Estudante</option><option value="familia">Familiar</option><option value="professor">Professor / Funcionário</option><option value="outro">Outro</option></select></div>
+        <div class="form-control"><label for="topic">Sobre o que você quer ajuda?</label><select id="topic"><option value="ansiedade">Ansiedade</option><option value="depressao">Depressão</option><option value="bullying">Bullying / Violência</option><option value="suporte">Apoio emocional</option><option value="orientacao">Orientação escolar / familiar</option><option value="outro">Outro</option></select></div>
+        <div class="form-control"><label for="message">Conte, com suas próprias palavras (o quanto quiser):</label><textarea id="message" placeholder="Escreva aqui..." required></textarea></div>
+
+        <div style="display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <div>
+            <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="shareSchool" checked/> Quero que a equipe saiba minha escola (opcional)</label>
+            <div class="muted">Se marcar, escreva a escola no campo abaixo. Se quiser total anonimato, deixe desmarcado.</div>
+          </div>
+        </div>
+
+        <div class="form-control"><label for="school">Nome da escola (opcional)</label><input id="school" type="text" placeholder="Escreva a escola somente se quiser" /></div>
+
+        <div style="display:flex;gap:8px;align-items:center">
+          <button type="button" id="sendBtn" class="btn">Enviar anonimamente</button>
+          <button type="button" id="downloadBtn" class="btn ghost">Baixar cópia (JSON)</button>
+          <button type="button" id="clearBtn" class="btn ghost">Limpar</button>
+        </div>
+
+        <div id="formMsg" class="muted" style="margin-top:10px"></div>
+      </form>
+
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0" />
+
+      <div class="muted">Notas para a equipe: as submissões devem ser tratadas por profissionais qualificados. Se houver risco de dano iminente, seguir procedimentos locais de segurança.</div>
+
+      <p style="margin-top:14px"><a class="btn" href="index.html">⬅ Voltar ao menu</a></p>
+    </main>
+
+    <footer>
+      <div class="muted">Proteja dados pessoais e siga protocolos locais para atendimento a menores.</div>
+    </footer>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
