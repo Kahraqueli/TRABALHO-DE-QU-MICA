@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda e Bem-Estar</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #2c262c; /* Creme suave */
+            color: #111;
+        }
+
+        header {
+            background: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav {
+            background: #1c1c1c;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #d2d2d2;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        section {
+            padding: 25px;
+            animation: fade 1s ease;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            border-left: 4px solid #ffffff;
+            padding-left: 10px;
+            font-size: 22px;
+            color: #ffffff;
+        }
+
+        .box {
+            background: #0f0f0f;
+            color: #e6e6e6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        /* FORMULÁRIO ANÔNIMO */
+        #form {
+            padding: 30px;
+            background: #0f0f0f;
+            border-radius: 12px;
+            margin: 30px;
+            color: #fff;
+        }
+
+        #form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: #1a1a1a;
+            color: #fff;
+            resize: none;
+        }
+
+        #form button {
+            margin-top: 12px;
+            background: #3a3a3a;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        #form button:hover {
+            background: #575757;
+        }
+
+        #msg-enviada {
+            display: none;
+            background: #1a1a1a;
+            padding: 12px;
+            border-left: 4px solid #4dafff;
+            color: #d9ecff;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>Projeto: Apoio ao Bem-Estar</header>
+
+<nav>
+    <a href="#depressao">Depressão</a>
+    <a href="#ansiedade">Ansiedade</a>
+    <a href="#bullying">Bullying</a>
+    <a href="#autoestima">Autoestima</a>
+    <a href="#form">Ajuda</a>
+</nav>
+
+<!-- SEÇÕES COM CAIXAS PRETAS -->
+
+<section id="depressao">
+    <h2>Depressão</h2> 
+
+    <div class="box">
+        <p>A depressão é um transtorno sério que afeta humor, energia e motivação. A informação e o apoio podem fazer a diferença.</p>
+    </div>
+</section>
+
+<section id="ansiedade">
+    <h2>Ansiedade</h2>
+    <div class="box">
+        <p>A ansiedade pode causar medo intenso e preocupação constante. Entender o problema é o primeiro passo para lidar com ele.</p>
+    </div>
+</section>
+
+<section id="bullying">
+    <h2>Bullying</h2>
+    <div class="box">
+        <p>O bullying machuca emocionalmente e fisicamente. Denunciar e apoiar é essencial para combater esse problema.</p>
+    </div>
+</section>
+
+<section id="autoestima">
+    <h2>Autoestima</h2>
+    <div class="box">
+        <p>A autoestima influencia diretamente como nos sentimos e enfrentamos o dia a dia. Pequenas atitudes podem transformar a forma como você se enxerga.</p>
+    </div>
+</section>
+
+<section id="suporte">
+    <h2>Como Buscar Suporte</h2>
+    <div class="box">
+        <p>É importante saber que pedir ajuda não é sinal de fraqueza. Amigos, família e profissionais podem ser aliados fundamentais.</p>
+    </div>
+</section>
+
+<section id="inspiracoes">
+    <h2>Inspirações e Motivação</h2>
+    <div class="box">
+        <ul>
+            <li>🌟 "Você já sobreviveu a 100% dos seus dias ruins."</li>
+            <li>💛 "Continue. No seu tempo, mas continue."</li>
+            <li>🔥 "Você é mais forte do que pensa."</li>
+            <li>✨ "Pequenos passos ainda são passos."</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CHAT FLUTUANTE -->
+<div id="chat-btn" style="position: fixed; bottom: 20px; right: 20px; background:#1c1c1c; padding:15px 18px; border-radius:50%; cursor:pointer; font-size:22px; color:#fff; box-shadow:0 0 10px #000;">💬</div>
+
+<div id="chat-box" style="display:none; position: fixed; bottom: 80px; right: 20px; width: 280px; background:#0f0f0f; border-radius:12px; box-shadow:0 0 15px #000;">
+    <div style="background:#1c1c1c; padding:12px; font-size:14px; font-weight:bold; border-bottom:1px solid #333;">Chat de Apoio</div>
+
+    <div id="chat-messages" style="height:200px; overflow-y:auto; padding:10px;">
+        <div style="background:#3a3a3a; padding:8px 10px; border-radius:10px; color:#fff; max-width:80%; margin-bottom:10px;">
+            Olá! Como você está se sentindo hoje?
+        </div>
+    </div>
+
+    <div style="padding:10px; background:#111; display:flex; gap:5px;">
+        <input id="chat-input" type="text" placeholder="Digite aqui..." style="flex:1; padding:8px; border:none; border-radius:8px; background:#1c1c1c; color:#fff;">
+        <button id="chat-send" style="padding:8px 12px; background:#333; border:none; border-radius:8px; color:#fff;">➤</button>
+    </div>
+</div>
+
+<script>
+    const chatBtn = document.getElementById('chat-btn');
+    const chatBox = document.getElementById('chat-box');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+
+    chatBtn.onclick = () => {
+        chatBox.style.display = chatBox.style.display === 'none' ? 'block' : 'none';
+    };
+
+    function enviarMensagem() {
+        let texto = chatInput.value.trim();
+        if (!texto) return;
+
+        let msgUser = document.createElement('div');
+        msgUser.style.background = '#005f73';
+        msgUser.style.padding = '8px 10px';
+        msgUser.style.borderRadius = '10px';
+        msgUser.style.color = 'white';
+        msgUser.style.maxWidth = '80%';
+        msgUser.style.margin = '10px 0 10px auto';
+        msgUser.textContent = texto;
+        chatMessages.appendChild(msgUser);
+
+        chatInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        setTimeout(() => {
+            let msgBot = document.createElement('div');
+            msgBot.style.background = '#3a3a3a';
+            msgBot.style.padding = '8px 10px';
+            msgBot.style.borderRadius = '10px';
+            msgBot.style.color = '#fff';
+            msgBot.style.maxWidth = '80%';
+            msgBot.style.margin = '10px auto 10px 0';
+            msgBot.textContent = 'Entendo. Obrigado por confiar em mim.';
+            chatMessages.appendChild(msgBot);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 700);
+    }
+
+    chatSend.onclick = enviarMensagem;
+    chatInput.addEventListener('keypress', e => { if (e.key === "Enter") enviarMensagem(); });
+</script>
+
+<!-- FORMULÁRIO ANÔNIMO -->
+<section id="form">
+    <p style="background:#1a1a1a; padding:10px; border-radius:8px; color:#e6e6e6;">
+        💛 Você não está sozinho(a). Sua voz importa. Compartilhe o que sente de forma segura e anônima.
+    </p>
+
+    <h2 style="color:white;">Formulário Anônimo</h2>
+
+    <form onsubmit="event.preventDefault(); document.getElementById('msg-enviada').style.display='block'; this.reset();">
+        <textarea rows="5" placeholder="Digite sua mensagem aqui..."></textarea>
+        <button>Enviar</button>
+    </form>
+
+    <div id="msg-enviada">✔ Sua mensagem foi enviada com sucesso!</div>
+</section>
+
+</body>
+</html>
